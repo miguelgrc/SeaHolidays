@@ -40,7 +40,7 @@ public class TravelAgency {
 	private void readBarcos(){
 		String line = "";
 		try {
-			//BufferedReader file = new BufferedReader(new FileReader("src/files/barcos.dat"));	//Necessary to replace this line for the one below in order for it to work after exporting as jar
+			//BufferedReader file = new BufferedReader(new FileReader("src/files/barcos.dat"));	//Necessary to replace this line with the one below in order for it to work after exporting as jar
 			BufferedReader file = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/files/barcos.dat")));	//For exporting as jar (there's no "src" in jars)
 			while (file.ready()) {
 				line = file.readLine();
@@ -60,7 +60,7 @@ public class TravelAgency {
 		String line = "";
 		Ship ship = null;
 		try {
-			//BufferedReader file = new BufferedReader(new FileReader("src/files/cruceros.dat"));	//Necessary to replace this line for the one below in order for it to work after exporting as jar
+			//BufferedReader file = new BufferedReader(new FileReader("src/files/cruceros.dat"));	//Necessary to replace this line with the one below in order for it to work after exporting as jar
 			BufferedReader file = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/files/cruceros.dat")));		//For exporting as jar (there's no "src" in jars)
 			while (file.ready()) {
 				line = file.readLine();
@@ -84,7 +84,7 @@ public class TravelAgency {
 	private void readExtras() {
 		String line = "";
 		try {
-			//BufferedReader file = new BufferedReader(new FileReader("src/files/barcos.dat"));	//Necessary to replace this line for the one below in order for it to work after exporting as jar
+			//BufferedReader file = new BufferedReader(new FileReader("src/files/barcos.dat"));	//Necessary to replace this line with the one below in order for it to work after exporting as jar
 			BufferedReader file = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/files/extras.dat")));	//For exporting as jar (there's no "src" in jars)
 			while (file.ready()) {
 				line = file.readLine();

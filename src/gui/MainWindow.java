@@ -1,69 +1,29 @@
 package gui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
-
-import java.awt.GridLayout;
-
-import javax.swing.JLabel;
-
-import java.awt.Component;
-
-import javax.swing.ImageIcon;
-
-import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.Point;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.RenderingHints;
-import java.awt.image.BufferedImage;
-
-import javax.swing.SwingConstants;
-
-import java.awt.Toolkit;
-
-import org.jvnet.substance.SubstanceLookAndFeel;
-
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.CardLayout;
-
-import javax.swing.JScrollPane;
-
-import logica.Booking;
-import logica.Cabin;
-import logica.Cruise;
-import logica.Extras;
-import logica.Ship;
-import logica.TravelAgency;
-
-import javax.swing.border.LineBorder;
-
 import java.awt.Color;
-
-import javax.swing.ButtonGroup;
-import javax.swing.DefaultListModel;
-import javax.swing.JComboBox;
-import javax.swing.JCheckBox;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
-import javax.swing.JList;
-import javax.swing.JButton;
-import javax.swing.JTextPane;
-import javax.swing.JToggleButton;
-import javax.swing.OverlayLayout;
-import javax.swing.ToolTipManager;
-
-import java.awt.event.ActionListener;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.Point;
+import java.awt.RenderingHints;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -71,34 +31,53 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-import javax.swing.ScrollPaneConstants;
+import javax.help.HelpBroker;
+import javax.help.HelpSet;
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JSpinner;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.JToggleButton;
+import javax.swing.KeyStroke;
+import javax.swing.OverlayLayout;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
+import javax.swing.ToolTipManager;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.UIManager;
 
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import org.jvnet.substance.SubstanceLookAndFeel;
 
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.KeyStroke;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
-
-import javax.swing.JSeparator;
-
-import java.awt.Font;
-
-import javax.help.*;
-
-import java.io.File;
-import java.net.*;
+import logica.Booking;
+import logica.Cabin;
+import logica.Cruise;
+import logica.Extras;
+import logica.Ship;
+import logica.TravelAgency;
 
 
 public class MainWindow extends JFrame {
@@ -306,13 +285,17 @@ public class MainWindow extends JFrame {
 	
 	private void loadHelp(){
 		
-		URL hsURL;
+		//URL hsURL;
 		HelpSet hs;
 		
 		try{
-			File file = new File("help/HelpSet.hs");
-			hsURL = file.toURI().toURL();
-			hs = new HelpSet(null, hsURL);
+			System.out.println(getClass().getResource("/HelpSet.hs").toURI());
+			//File file = new File("help/HelpSet.hs");	//Necessary to replace these three lines with the two below in order for this to work after exporting as jar
+			//hsURL = file.toURI().toURL();				//
+			//hs = new HelpSet(null, hsURL);			//
+			URL in = this.getClass().getResource("/HelpSet.hs");	//For exporting as jar. We also need to add "help" as a source folder to the build path!
+			hs = new HelpSet(null, in);								//
+			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this, "Help not found");
 			return;
