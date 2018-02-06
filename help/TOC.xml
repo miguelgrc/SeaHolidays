@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+
+<toc version="1.0">
+  
+  <tocitem text="EII Travel Agency" target="introduction" />
+  <tocitem text="Choosing the cruise" target="cruises" >
+  	<tocitem text="Discounts" target="discounts" />
+  	<tocitem text="Ships information" target="ships" />
+  </tocitem>
+  <tocitem text="Configuring the cabins" target="cabin" >
+  	 <tocitem text="Add cabins" target="add" />
+  	 <tocitem text="Remove a cabin" target="remove" />
+  </tocitem>
+  <tocitem text="Inserting your data" target="data" />
+  <tocitem text="Finishing purchase" target="bill" />
+  
+</toc>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+<!DOCTYPE index
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/index_1_0.dtd">
+         
+<index version="1.0">
+
+	<indexitem text="Description of the application" target="introduction" />
+	<indexitem text="Select cruise" target="cruises" >
+		<indexitem text="Discounts" target="discounts" />
+		<indexitem text="Ships information" target="ships" />
+	</indexitem>
+	<indexitem text="Configure cabins" target="cabins" >
+		<indexitem text="Add cabins" target="add" />
+		<indexitem text="Remove a cabin" target="remove" />
+	</indexitem>
+	<indexitem text="Finish purchase" target="bill" />
+	
+</index>
