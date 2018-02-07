@@ -289,7 +289,6 @@ public class MainWindow extends JFrame {
 		HelpSet hs;
 		
 		try{
-			System.out.println(getClass().getResource("/HelpSet.hs").toURI());
 			//File file = new File("help/HelpSet.hs");	//Necessary to replace these three lines with the two below in order for this to work after exporting as jar
 			//hsURL = file.toURI().toURL();				//
 			//hs = new HelpSet(null, hsURL);			//
@@ -1733,7 +1732,7 @@ public class MainWindow extends JFrame {
 		sb.append(texts.getString("txtCabins") + " + Extras: \n\t" + price + "\n");
 		if(selectedCruise.getDiscounted()){
 			sb.append(texts.getString("txtDiscountedOffer") + ": \n\t" + discPrice + " \u20ac\n");
-			sb.append(texts.getString("txtTotalImport") + ": \n\t" + price + " + " + discPrice + "\n\n");
+			sb.append(texts.getString("txtTotalImport") + ": \n\t" + price + " - " + discPrice + "\n\n");
 		}
 		sb.append( "TOTAL ........................ " + (price-discPrice) + " \u20ac\n");		
 		
